@@ -1,0 +1,23 @@
+<h1>Add Service</h1>
+
+<%= form_with model: @service, url: services_path, method: :post do |f| %>
+    <%# <%= f.hidden_field :user_id, value: current_user.id %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit "Add Service" %>
+  </div>
+<% end %>

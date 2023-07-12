@@ -1,0 +1,26 @@
+<h1>Services</h1>
+
+<% if @services.any? %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th></th>
+    </tr>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td><%= service.username %></td>
+        <td><%= service.password %></td>
+        <td><%= link_to "Edit", edit_service_path(service) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>No services found.</p>
+<% end %>
+
+<%= link_to "Add Service", new_service_path %>
+
+<%= link_to "Log out", '/logout' %>
